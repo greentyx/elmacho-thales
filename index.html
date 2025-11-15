@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thalles Love Ana</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="gordo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>O HOMEM MAIS LINDO DO MUNDO</h1>
+        <img src="thalles.webp" alt="Thalles" class="foto-thalles">
+    </header>
+
+    <main>
+        <section class="romance">
+            <h2>Thalles, el macho</h2>
+            <p>
+                Ele sempre foi gado, mas nunca dava certo... até que jogando 
+                <strong>Honor of Kings</strong>, encontrou o amor da sua vida.
+                Mesmo sua <strong>gadisse</strong> sendo extremamente forte,
+                conseguiu conquistar sua amada <strong>Ana Cachoeira</strong>.
+            </p>
+        </section>
+
+        <section class="ana">
+            <h2>Ana Cachoeira</h2>
+            <p>Essa foi a menina que nosso el macho conquistou:</p>
+            <img src="ana.jpeg" alt="Ana" class="foto-ana">
+        </section>
+    </main>
+
+    <!-- Corações flutuando -->
+<div class="hearts-container"></div>
+
+<!-- Música automática -->
+<audio id="bg-music" autoplay loop>
+    <source src="musica.m4a" type="audio/mp4">
+</audio>
+
+    <script>
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        heart.style.fontSize = (20 + Math.random() * 30) + "px";
+
+        document.querySelector(".hearts-container").appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
